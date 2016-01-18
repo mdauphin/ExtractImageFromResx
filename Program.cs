@@ -13,6 +13,13 @@ namespace ExtractImageFromResx
         {
 
             var doc = new XmlDocument();
+
+            if (args.Length == 0)
+            {
+                Console.Out.WriteLine("Program use:\n\tExtractImageFromResx.exe path_to_resx_file\n");
+                return ;
+            }
+
             doc.Load(args[0]);
 
             var root = doc.DocumentElement ;
